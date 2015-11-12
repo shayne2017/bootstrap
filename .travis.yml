@@ -6,6 +6,7 @@ node_js:
   - "4"
   - "stable"
 before_install:
+  - npm install -g npm@3
   - rvm install 2.0.0 && rvm use 2.0.0
   - "export TRAVIS_COMMIT_MSG=\"$(git log --format=%B --no-merges -n 1)\""
   - echo "$TRAVIS_COMMIT_MSG" | grep '\[skip validator\]'; export TWBS_DO_VALIDATOR=$?; true
